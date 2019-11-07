@@ -69,13 +69,15 @@ public class ArtistaService {
 		}
 	}
 	
-	public List<Artista> buscarPorNomeOrdenacao(ArtistaFilter filtro){
+	public List<Artista> buscarPorNome(ArtistaFilter filtro){
 		
 		if(filtro.validaCampos()) {
 			if(filtro.getTipoConsulta().equals(ConsultaNome.DESC)) {
 				return artistaRepository.buscarPorNomeDesc(filtro.getConsulta());
-			}else {
+			}else if(filtro.getTipoConsulta().equals(ConsultaNome.ASC))  {
 				return artistaRepository.buscarPorNomeAsc(filtro.getConsulta());
+			}else {
+				return artistaRepository.buscarPorNomeQtdLetras(Long.valueOf(filtro.getConsulta()));
 			}
 		}else {
 			throw new RuntimeException("Dados inválidos!");

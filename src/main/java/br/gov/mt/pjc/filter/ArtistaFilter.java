@@ -18,7 +18,8 @@ public class ArtistaFilter {
 		this.tipoConsulta = tipoConsulta;
 	}
 	public boolean validaCampos() {
-		if(getConsulta().isEmpty() || getConsulta()==null ) {				
+		if(getConsulta()==null  ||getConsulta().isEmpty() 
+				|| getTipoConsulta()== null) {				
 			return false;
 		}else {
 			return true;

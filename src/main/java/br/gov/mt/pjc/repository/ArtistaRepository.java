@@ -25,7 +25,9 @@ public interface ArtistaRepository extends JpaRepository<Artista, Integer>{
 				+ "where a.nome like :nome% "
 				+ "order by a.nome asc")
 		List<Artista>  buscarPorNomeAsc(@Param("nome") String nome);
-
-
+		
+		@Query("select a from Artista a "
+				+ "where char_length(a.nome) = :qtd")
+		List<Artista> buscarPorNomeQtdLetras(@Param("qtd") Long qtd);
 	
 }

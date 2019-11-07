@@ -56,9 +56,9 @@ public class ArtistaResource {
 		}
 	}
 	
-	@GetMapping("/nome-ordena")
+	@GetMapping("/consulta-nome")
 	public List<Artista> buscarPorNomeOrdenação(@Valid @RequestBody ArtistaFilter filtro) {
-		return artistaService.buscarPorNomeOrdenacao(filtro);
+		return artistaService.buscarPorNome(filtro);
 	}
 
 }
