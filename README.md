@@ -1,21 +1,33 @@
-**Tutorial para executar e testar a aplicação**
+# Tutorial para executar e testar a aplicação
 
-**1-	Download e instalação do PostgreSQL**
+Essa é uma aplicação Java REST (WEB SERVICE) com CRUD de duas entidades (Artista e Album com relacionamento 1:N). 
+Pré-requisitos:
+*	Java instalada e configurada na máquina;
+*	Softwares instalados: PostgreSQL, STS instalados e Postman;
 
-Para download do PostgreSQL, acesse: https://www.postgresql.org/download/ e selecione a alternativa de sistema operacional, arquitetura (32 ou 64 bits) e versão desejada. Instalei a versão 10.10 para Windows x86-64: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+## Download e instalação do PostgreSQL ##
+
+*	Para download do PostgreSQL, acesse: https://www.postgresql.org/download/ e 
+*	selecione a alternativa de sistema operacional, arquitetura (32 ou 64 bits) e versão desejada. 
+
+Instalei a versão 10.10 para Windows x86-64: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
 A instalação é bastante intuitiva, mas se necessário veja o seguinte tutorial: http://www.postgresqltutorial.com/install-postgresql/
 
-**2-	Criando e povoando tabelas**
+## Criando e povoando tabelas ##
 
-Depois de terminar a instalação, no Menu Iniciar do Windows, digite “pgAdmin” e selecione a interface. 
-No pgAdmin, vamos criar as tabelas dentro do banco de dados postgres* (já existente).
-Vá em Servers > PostgreSQL 10 > Databases > postgres > Schemas. 
-Clique com o botão direito no schema “public” e depois em CREATE Script.
-Na janela que abrir, apague oque aparecer, cole o script de criação e povoamento das tabelas abaixo e execute:
+*	Depois de terminar a instalação, no Menu Iniciar do Windows, digite “pgAdmin” e selecione a interface. 
+*	No pgAdmin, vamos criar as tabelas dentro do banco de dados postgres* (já existente).
+*	Vá em Servers > PostgreSQL 10 > Databases > postgres > Schemas. 
+*	Clique com o botão direito no schema “public” e depois em CREATE Script.
+*	Na janela que abrir, apague oque aparecer, cole o script de criação e povoamento das tabelas abaixo e execute:
 
-**-- Início do Script**
 
-CREATE TABLE public."artista"
+
+```javascript
+
+> CREATE TABLE public."artista"
 (
     id serial NOT NULL,
     nome character varying NOT NULL,
@@ -69,25 +81,22 @@ INSERT INTO public."album"(titulo, id_artista)VALUES ('Use Your IIIlusion I', 4)
 INSERT INTO public."album"(titulo, id_artista)VALUES ('Use Your IIIlusion II', 4);
 INSERT INTO public."album"(titulo, id_artista)VALUES ('Greatest Hits', 4);
 
-**-- Término do Script**
+```
 
-**3 - Instruções para baixar o repositório do projeto e executar localmente**
+## Instruções para baixar o repositório do projeto e executar localmente ## 
 
- Faça download do STS em https://spring.io/tools
- 
- Baixe o projeto público do GitHub na workspace do seu STS;
- 
- Execute o STS informando a workspace onde você colocou o projeto;
- 
- Execute o projeto “BackEndMusica”: botão direito encima do projeto > Run as> Spring Boot App;
+*	Faça download do STS em https://spring.io/tools 
+*	Baixe o projeto público do GitHub na workspace do seu STS; 
+*	Execute o STS informando a workspace onde você colocou o projeto; 
+*	Execute o projeto “BackEndMusica”: botão direito encima do projeto > Run as> Spring Boot App;
  
 Com isso, o projeto estará executando localmente e aguardando requisições;
 
-**4 - Instruções para fazer requisições aos serviços**
+## Instruções para fazer requisições aos serviços ## 
 
 Para testar a aplicação vamos utilizar o software Postman, que pode ser baixado em: https://www.getpostman.com/downloads/
 
-Desenvolvi um passo a passo com imagens testando os serviços, veja : https://docs.google.com/document/d/1PfSDoM9HfQ7vi87NrCuEsUeKFWhz-XZGf-2t9-4loaE/edit?usp=sharing
+Desenvolvi um passo a passo com imagens com evidência dos serviços em funcionamento, acesse: https://docs.google.com/document/d/1PfSDoM9HfQ7vi87NrCuEsUeKFWhz-XZGf-2t9-4loaE/edit?usp=sharing
 
 Tutorial de funcionamento do Postman:
 https://medium.com/@thi_carva/testando-servi%C3%A7os-web-api-com-postman-874ac81b20a3
