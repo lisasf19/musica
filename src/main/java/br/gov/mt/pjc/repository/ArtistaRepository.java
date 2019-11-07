@@ -12,7 +12,7 @@ import br.gov.mt.pjc.model.Artista;
 @Repository
 public interface ArtistaRepository extends JpaRepository<Artista, Integer>{
 
-		@Query("select a from Artista "
+		@Query("select a from Artista a "
 			+ "where a.nome = :nome")
 	List<Artista> verificarRegistroJaExistente( @Param("nome") String nome);
 

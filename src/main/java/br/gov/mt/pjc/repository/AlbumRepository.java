@@ -12,7 +12,7 @@ import br.gov.mt.pjc.model.Album;
 @Repository
 public interface AlbumRepository extends JpaRepository<Album, Integer>{
 	
-	@Query("select a from Album "
+	@Query("select a from Album a "
 			+ "where a.titulo = :titulo "
 			+ "and a.artista.id = :idArtista")
 	List<Album> verificarRegistroJaExistente(@Param("titulo")String titulo, @Param("idArtista")Integer id);
