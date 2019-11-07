@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class Album implements Serializable{
 	@Column(name = "titulo")
 	private String titulo;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumns(@JoinColumn(name = "id_artista", referencedColumnName = "id"))
 	private Artista artista;
 

@@ -14,7 +14,18 @@ public interface ArtistaRepository extends JpaRepository<Artista, Integer>{
 
 		@Query("select a from Artista a "
 			+ "where a.nome = :nome")
-	List<Artista> verificarRegistroJaExistente( @Param("nome") String nome);
+	List<Artista> verificarRegistroJaExistente( @Param("nome") String nome);		
+		
+		@Query("select a from Artista a "
+				+ "where a.nome like :nome% "
+				+ "order by a.nome desc")
+		List<Artista> buscarPorNomeDesc(@Param("nome") String nome);
+		
+		@Query("select a from Artista a "
+				+ "where a.nome like :nome% "
+				+ "order by a.nome asc")
+		List<Artista>  buscarPorNomeAsc(@Param("nome") String nome);
+
 
 	
 }

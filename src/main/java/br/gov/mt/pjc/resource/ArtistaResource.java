@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.gov.mt.pjc.filter.ArtistaFilter;
 import br.gov.mt.pjc.model.Artista;
 import br.gov.mt.pjc.service.ArtistaService;
 
@@ -53,6 +54,11 @@ public class ArtistaResource {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
 					.body("Artista informado não encontrado. \nErro de origem:"+ e.getMessage());
 		}
+	}
+	
+	@GetMapping("/nome-ordena")
+	public List<Artista> buscarPorNomeOrdenação(@Valid @RequestBody ArtistaFilter filtro) {
+		return artistaService.buscarPorNomeOrdenacao(filtro);
 	}
 
 }

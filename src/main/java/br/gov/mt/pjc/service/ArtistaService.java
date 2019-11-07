@@ -7,8 +7,11 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.gov.mt.pjc.filter.ArtistaFilter;
+import br.gov.mt.pjc.filter.ConsultaNome;
 import br.gov.mt.pjc.model.Artista;
 import br.gov.mt.pjc.repository.ArtistaRepository;
+
 
 @Service
 public class ArtistaService {
@@ -64,7 +67,20 @@ public class ArtistaService {
 		}else {
 			throw new RuntimeException("Dado inválido! Não foi possível persistir o registro.");
 		}
-	}	
+	}
+	
+	public List<Artista> buscarPorNomeOrdenacao(ArtistaFilter filtro){
+		
+		if(filtro.validaCampos()) {
+			if(filtro.getTipoConsulta().equals(ConsultaNome.DESC)) {
+				return artistaRepository.buscarPorNomeDesc(filtro.getConsulta());
+			}else {
+				return artistaRepository.buscarPorNomeAsc(filtro.getConsulta());
+			}
+		}else {
+			throw new RuntimeException("Dados inválidos!");
+		}		
+	}
 	
 
 }
