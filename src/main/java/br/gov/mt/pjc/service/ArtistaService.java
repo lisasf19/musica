@@ -16,6 +16,8 @@ public class ArtistaService {
 	@Autowired
 	private ArtistaRepository artistaRepository;
 	
+	private List<Artista> listaArtista;
+	
 		
 	public List<Artista> buscarTodos(){
 		return artistaRepository.findAll();
@@ -46,5 +48,23 @@ public class ArtistaService {
 			throw new RuntimeException("Artista não encontrado.");
 		}
 	}
+	
+	public Artista salvar(Artista artista) {
+		//verifica campos obrigatórios
+		if(artista.verificaCamposObrigatorios()) {
+			//verifica se há um registro de artista com as mesmas informações já cadastradas
+			listaArtista = artistaRepository.verificarRegistroJaExistente(artista.getNome());
+			
+			//se não houver registro já cadastrado realiza a operação
+			if(listaArtista == null || listaArtista.isEmpty()) {
+				return artistaRepository.save(artista);
+			}else {
+				throw new RuntimeException("Artista já cadastrado.");
+			}			
+		}else {
+			throw new RuntimeException("Dado inválido! Não foi possível persistir o registro.");
+		}
+	}	
+	
 
 }

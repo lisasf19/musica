@@ -95,4 +95,14 @@ public class Album implements Serializable{
 			return false;
 		return true;
 	}
+
+	public boolean verificaCamposObrigatorios() {
+		if(getTitulo() == null || getTitulo().isEmpty() || 
+				getArtista().getId() == null || getArtista().getId()== 0 ) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+		
 }
