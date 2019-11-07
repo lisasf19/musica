@@ -27,7 +27,7 @@ A instalação é bastante intuitiva, mas se necessário veja o seguinte tutoria
 
 ```javascript
 
-> CREATE TABLE public."artista"
+CREATE TABLE public."artista"
 (
     id serial NOT NULL,
     nome character varying NOT NULL,
@@ -96,7 +96,7 @@ Com isso, o projeto estará executando localmente e aguardando requisições;
 
 Para testar a aplicação vamos utilizar o software Postman, que pode ser baixado em: https://www.getpostman.com/downloads/
 
-Desenvolvi um passo a passo com imagens com evidência dos serviços em funcionamento, acesse: https://docs.google.com/document/d/1PfSDoM9HfQ7vi87NrCuEsUeKFWhz-XZGf-2t9-4loaE/edit?usp=sharing
+Desenvolvi um pequeno relatório com evidências dos serviços em funcionamento, acesse: https://docs.google.com/document/d/1PfSDoM9HfQ7vi87NrCuEsUeKFWhz-XZGf-2t9-4loaE/edit?usp=sharing
 
 Tutorial de funcionamento do Postman:
 https://medium.com/@thi_carva/testando-servi%C3%A7os-web-api-com-postman-874ac81b20a3
