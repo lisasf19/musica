@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Artista")
+@Table(name="artista")
 public class Artista implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -81,9 +81,9 @@ public class Artista implements Serializable{
 	
 	public  boolean verificaCamposObrigatorios() {
 		if(getNome().isEmpty() || getNome()== null) {
-			return true;
-		}else {
 			return false;
+		}else {
+			return true;
 		}
 	}
 	
