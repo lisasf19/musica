@@ -1,5 +1,6 @@
 package br.gov.mt.pjc.filter;
 
+//classe criada para receber os dados do Json informado nas requisiçãos do resource /artistas 
 public class ArtistaFilter {
 
 	private String consulta;		
@@ -18,13 +19,13 @@ public class ArtistaFilter {
 		this.tipoConsulta = tipoConsulta;
 	}
 	public boolean validaCampos() {
-		if(getConsulta()==null  ||getConsulta().isEmpty() 
-				|| getTipoConsulta()== null) {				
+		if(getConsulta()==null  ||getConsulta().isEmpty() || getTipoConsulta()== null) {				
 			return false;
 		}else {
 			return true;
 		}
 	}
+	
 }
 	
 	

@@ -19,9 +19,8 @@ public class ArtistaService {
 	@Autowired
 	private ArtistaRepository artistaRepository;
 	
-	private List<Artista> listaArtista;
+	private List<Artista> listaArtista;		
 	
-		
 	public List<Artista> buscarTodos(){
 		return artistaRepository.findAll();
 	}
@@ -34,6 +33,7 @@ public class ArtistaService {
 		Optional<Artista> artistaOptional = artistaRepository.findById(id);
 		//verifica se foi encontrado registro
 		if(artistaOptional.isPresent()) {
+			//retorna o registro encontrado
 			return artistaOptional.get();
 		}else {
 			throw new RuntimeException("Artista não cadastrado. Código não encontrado.");
@@ -43,9 +43,11 @@ public class ArtistaService {
 	public Artista alterarArtista(Integer id, Artista artista) {
 		//verifica se o registro a ser alterado já existe no banco de dados
 		Artista artistaSalvo = this.buscarPorId(id);
-		
+		//caso existe persiste as informaç
 		if(artistaSalvo != null) {
+			//é realizada uma copia de artista para a istancia de artistaSalvo
 			BeanUtils.copyProperties(artista, artistaSalvo, "id");
+			//atualiza o registro
 			return artistaRepository.save(artistaSalvo);
 		}else {
 			throw new RuntimeException("Artista não encontrado.");
@@ -69,14 +71,19 @@ public class ArtistaService {
 		}
 	}
 	
+	//método para pesquisar artista por nome considerando o tipo da consulta informada
 	public List<Artista> buscarPorNome(ArtistaFilter filtro){
-		
-		if(filtro.validaCampos()) {
+		//valida campos obrigatórios
+		if(filtro.validaCampos()) {	
+			//verifica o tipo de pesquisa informado e aciona o método de consulta correspondente
 			if(filtro.getTipoConsulta().equals(ConsultaNome.DESC)) {
 				return artistaRepository.buscarPorNomeDesc(filtro.getConsulta());
+				
 			}else if(filtro.getTipoConsulta().equals(ConsultaNome.ASC))  {
 				return artistaRepository.buscarPorNomeAsc(filtro.getConsulta());
+				
 			}else {
+				//converte o parâmetro para Long por causa da função char_length que será usada na consulta
 				return artistaRepository.buscarPorNomeQtdLetras(Long.valueOf(filtro.getConsulta()));
 			}
 		}else {
