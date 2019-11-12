@@ -4,7 +4,7 @@ Essa é uma aplicação Java REST (WEB SERVICE) com CRUD de duas entidades (Arti
 Pré-requisitos:
 *	Java instalado e configurado na máquina; 
 Acesse: https://www.devmedia.com.br/preparacao-do-ambiente-para-desenvolvimento-em-java/25188
-*	Softwares instalados: PostgreSQL, STS instalados e Postman;
+*	Softwares instalados: PostgreSQL, STS e Postman;
 
 
 ## Download e instalação do PostgreSQL ##
