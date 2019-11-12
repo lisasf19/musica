@@ -2,7 +2,7 @@
 
 Essa é uma aplicação Java REST (WEB SERVICE) com CRUD de duas entidades (Artista e Album com relacionamento 1:N). 
 Pré-requisitos:
-*	Java instalada e configurada na máquina; 
+*	Java instalado e configurada na máquina; 
 Acesse: https://www.devmedia.com.br/preparacao-do-ambiente-para-desenvolvimento-em-java/25188
 *	Softwares instalados: PostgreSQL, STS instalados e Postman;
 
