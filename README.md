@@ -18,7 +18,7 @@ A instalação é bastante intuitiva, mas se necessário veja o seguinte tutoria
 
 ## Criando e povoando tabelas ##
 
-*	Depois de terminar a instalação, no Menu Iniciar do Windows, digite “pgAdmin” e selecione a interface. 
+*	Depois de terminar a instalação do PostgreSQL, no Menu Iniciar do Windows, digite “pgAdmin” e selecione a interface. 
 *	No pgAdmin, vamos criar as tabelas dentro do banco de dados postgres* (já existente).
 *	Vá em Servers > PostgreSQL 10 > Databases > postgres > Schemas. 
 *	Clique com o botão direito no schema “public” e depois em CREATE Script.
