@@ -97,7 +97,7 @@ Com isso, o projeto estará executando localmente e aguardando requisições;
 
 Para testar a aplicação vamos utilizar o software Postman, que pode ser baixado em: https://www.getpostman.com/downloads/
 
-Desenvolvi um pequeno relatório descrevendo os serviços, acesse: https://docs.google.com/document/d/1PfSDoM9HfQ7vi87NrCuEsUeKFWhz-XZGf-2t9-4loaE/edit?usp=sharing
+Para facilitar essa parte, desenvolvi um pequeno relatório descrevendo os serviços, acesse: https://docs.google.com/document/d/1PfSDoM9HfQ7vi87NrCuEsUeKFWhz-XZGf-2t9-4loaE/edit?usp=sharing
 
 Tutorial de funcionamento do Postman:
 https://medium.com/@thi_carva/testando-servi%C3%A7os-web-api-com-postman-874ac81b20a3
